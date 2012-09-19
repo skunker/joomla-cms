@@ -64,6 +64,10 @@ class ContentViewCategories extends JView
 		$this->assignRef('parent',		$parent);
 		$this->assignRef('items',		$items);
 
+		// Increment the hit counter of the category.
+		$model = $this->getModel();
+		$model->hit();
+		
 		$this->_prepareDocument();
 
 		parent::display($tpl);
